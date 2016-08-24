@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My AngularJS RequreJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body class="container">
+
+<div ng-controller="DirectiveController as dirCtrl"  >
+    <div class="row">
+        <p style="color:#000;font-size:30px;font-weight: bold;text-align: center">NgModelController Implementation in Directive</p>
+
+        <div style="margin-top:50px;">
+            <div class="col-xs-4 col-xs-offset-2" >
+                <h4>Formatting Phone Number</h4>
+                <div class="row">
+                    <div class="col-xs-8">
+                        <form name="phoneForm">
+                            <input type="text" class="form-control" name="phoneNumber"
+                                   phone-number ng-model="dirCtrl.phoneNumber">
+                        </form>
+                    </div>
+                </div>
+                <br>
+                Valid : {{phoneForm.phoneNumber.$valid}}<br>
+                Actual Value : {{dirCtrl.phoneNumber}}
+            </div>
+
+            <div class="col-xs-4 col-xs-offset-2">
+
+                <h4>Formatting Currency</h4>
+                <div class="row">
+                    <div class="col-xs-8">
+                        <input type="text" class="form-control" currency ng-model="dirCtrl.currency">
+                    </div>
+                </div>
+                <br>
+                Actual Value : {{dirCtrl.currency}}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div>
+
+</div>
+
+<script src="/bower_components/requirejs/require.js" data-main="/js/main.js"></script>
+
+</body>
+</html>
